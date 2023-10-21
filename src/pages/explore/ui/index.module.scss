@@ -1,0 +1,42 @@
+.explore {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); /* Здесь 200px - минимальная ширина элемента */
+    gap: 3px; /* Расстояние между элементами */
+    max-width: 1015px; /* Максимальная ширина контейнера, чтобы ограничить его ширину */
+    margin: 0 auto; /* Центрирование контейнера */
+    margin-top: 70px;
+  }
+  
+  .explore-item {
+    background: #ccc; /* Здесь можно добавить фоновое изображение или картинку */
+   // height: 200px; /* Здесь можно задать высоту элемента */
+    /* Другие стили для внешнего вида элементов */
+    overflow: hidden;
+   
+  }
+  
+.explore-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+  /* Медиа-запросы для изменения количества элементов в строке */
+  @media (max-width: 768px) {
+    .explore {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Изменение количества элементов на узких экранах */
+    }
+    .explore-item {
+        height: 200px; 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .explore {
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); /* Изменение количества элементов на очень узких экранах */
+    }
+    .explore-item {
+        height: 200px; 
+    }
+  }
+  

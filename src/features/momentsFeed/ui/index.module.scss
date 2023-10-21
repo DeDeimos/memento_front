@@ -1,0 +1,32 @@
+.feed {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Здесь 200px - минимальная ширина элемента */
+    gap: 3px; /* Расстояние между элементами */
+    max-width: 610px; /* Максимальная ширина контейнера, чтобы ограничить его ширину */
+    margin: 0 auto; /* Центрирование контейнера */
+  }
+  
+  .feed-item {
+    background: #ccc; /* Здесь можно добавить фоновое изображение или картинку */
+    height: 200px; /* Здесь можно задать высоту элемента */
+    /* Другие стили для внешнего вида элементов */
+  }
+  
+.feed-item img {
+    width: 100%;
+    height: 100%;
+}
+
+  /* Медиа-запросы для изменения количества элементов в строке */
+  @media (max-width: 768px) {
+    .feed {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Изменение количества элементов на узких экранах */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .feed {
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Изменение количества элементов на очень узких экранах */
+    }
+  }
+  

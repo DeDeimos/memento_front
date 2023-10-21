@@ -1,0 +1,88 @@
+// .header {
+//     display: flex;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+
+// }
+
+.header {
+    /* display: none; */
+    // display: flex;
+    // padding: 5px 2px;
+    // text-align: center;
+    // position: fixed;
+    // // top: 0;
+    // // left: 0;
+    // width: 100%;
+    // max-width: 800px;
+    // height: fit-content;
+    // align-items: center;
+    // justify-content: center;
+    // /* justify-content: space-evenly; */
+    // justify-content: space-between;
+    // background-color: white;
+    display: flex;
+    padding: 5px 2px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    max-width: 1000px;
+    height: fit-content;
+    align-items: center;
+    justify-content: space-evenly; /* Центрирование как по горизонтали, так и по вертикали */
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0; /* Центрирование по горизонтали */
+    margin: 0 auto;
+}
+
+.icon {
+    width: 100px;
+}
+
+.icon-mini {
+    display: none;
+}
+
+.header-item {
+    align-items: center;
+
+}
+.header-input {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #ebebeb;
+}
+
+input.header-input {
+    border: none;
+}
+
+.right-icons img {
+    width: 24px;
+    padding: 10px;
+}
+
+@media (max-width: 465px) {
+    .right-icons img {
+        width: 16px;
+        padding: 3px;
+    }
+
+    .icon {
+        display: none;
+    }
+
+    .icon-mini {
+        display: block;
+    }
+
+    .header-input {
+        padding: 3px 5px;
+    }
+}

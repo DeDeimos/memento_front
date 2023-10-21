@@ -1,0 +1,44 @@
+.feed {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 50px;
+}
+
+.feed-body {
+    padding: 2px;
+    --tw-bg-opacity: 1;
+    // background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    background-color: white;
+    border-radius: 0.75rem/* 12px */;
+    width: 70%;
+}
+
+.feed-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.item-profile {
+    display: flex;
+    align-items: center;
+}
+
+.item-profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.post img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}

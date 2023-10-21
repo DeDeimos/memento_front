@@ -1,0 +1,26 @@
+.add-comment button {
+    border: none;
+    background-color: inherit;
+    color: #0095F6;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.add-comment {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .add-comment textarea {
+    width: 100%;
+    overflow-y: hidden; /* Автоматически скрывает вертикальную полосу прокрутки */
+    border: 1px solid #ccc;
+    padding: 10px;
+    outline: none;
+    border: none;
+
+  }
+
+.add-comment textarea:focus {
+    outline: 2px solid transparent; /* Делаем обводку прозрачной */
+  }

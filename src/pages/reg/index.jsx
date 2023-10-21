@@ -1,0 +1,1 @@
+import { Reg } from "./ui";

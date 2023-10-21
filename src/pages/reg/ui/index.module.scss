@@ -1,0 +1,87 @@
+.reg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.reg-body {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.reg-inputs,
+.reg-change {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px lightgray;
+}
+
+.reg-inputs input {
+    margin-bottom: 5px;
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    font-size: 10px;
+}
+
+.reg-inputs button {
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    background-color: #4696ff;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.reg-inputs button:hover {
+    background-color: #4696ff;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.reg-inputs p, b {
+    font-size: 11px;
+    color: grey;
+    text-align: center;
+    font-weight: 200;
+}
+
+.reg-inputs b {
+    font-size: 12px;
+    color: gray;
+    font-weight: 600;
+}
+
+.reg-inputs a {
+    width: 100%;
+}
+
+.reg-change {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.reg-change a {
+    color: #4696ff;
+    font-weight: 600;
+    cursor: pointer;
+    underline: none;
+    text-decoration: none;
+}

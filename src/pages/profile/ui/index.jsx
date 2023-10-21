@@ -22,7 +22,7 @@ const Profile = () => {
         </div>
       </div>
       <div className={styles.description}>
-        <b>Пупкин Залупкин</b>
+        <b>Пупкин Затупкин</b>
         <p>Все снова перепутали</p>
         <p>Что-то</p>
       </div>

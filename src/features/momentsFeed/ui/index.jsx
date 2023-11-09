@@ -1,27 +1,17 @@
 import styles from "./index.module.scss";
-import photo from "../../../assets/vanik.jpg"
 
-const MomentsFeed = () => {
+const MomentsFeed = ({moments}) => {
   return (
       <div className={styles.feed}>
-            <div className={styles.feedItem}>
-                <img src={photo}/>
-            </div>
-            <div className={styles.feedItem}>
-                <img src={photo}/>
-            </div>
-            <div className={styles.feedItem}>
-                <img src={photo}/>
-            </div>
-            <div className={styles.feedItem}>
-                <img src={photo}/>
-            </div>
-            <div className={styles.feedItem}>
-                <img src={photo}/>
-            </div>
-            <div className={styles.feedItem}>
-                <img src={photo}/>
-            </div>
+            {!moments && <p>Нет публикаций</p>}
+            {moments && moments.map((moment) => {
+              return (
+                <div key={moment.id} className={styles.feedItem}>
+                  <img src={moment.image}/>
+                </div>
+              )
+            })}
+
       </div>
   );
 };

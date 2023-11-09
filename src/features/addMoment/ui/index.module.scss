@@ -1,0 +1,62 @@
+.moment {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(138, 138, 138, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-input {
+    //height: 100%;
+}
+
+.moment-body {
+    padding: 2px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    border-radius: 0.75rem/* 12px */;
+    width: 60%;
+    height: 70%;
+    align-items: center;
+    display: flex;
+}
+
+.text-input {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    height: 100%;
+}
+
+.text-input-label {
+    height: 70%;
+}
+
+.text-input-tags {
+    height: 20%;
+}
+
+
+.text-input-tags textarea {
+    width: 100%;
+    overflow-y: hidden; /* Автоматически скрывает вертикальную полосу прокрутки */
+    border: 1px solid #ccc;
+    padding: 10px;
+    outline: none;
+    border: none;
+    resize: vertical
+}
+
+.text-input-label textarea {
+    width: 100%;
+    overflow-y: hidden; /* Автоматически скрывает вертикальную полосу прокрутки */
+    border: 1px solid #ccc;
+    padding: 10px;
+    outline: none;
+    border: none;
+    resize: vertical
+}

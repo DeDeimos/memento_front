@@ -22,8 +22,6 @@
   border-radius: 50%;
 }
 
-
-
 .head-body {
   display: flex;
   padding: 10px;
@@ -47,6 +45,7 @@
   background-color: white;
   border: 0.5px solid lightgray;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .main button:hover {

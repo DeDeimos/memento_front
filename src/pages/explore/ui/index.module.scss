@@ -1,10 +1,14 @@
+.content {
+  margin-top: 85px;
+  
+}
+
 .explore {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); /* Здесь 200px - минимальная ширина элемента */
     gap: 3px; /* Расстояние между элементами */
     max-width: 1015px; /* Максимальная ширина контейнера, чтобы ограничить его ширину */
     margin: 0 auto; /* Центрирование контейнера */
-    margin-top: 85px;
   }
   
   .explore-item {
@@ -21,6 +25,25 @@
     object-fit: cover;
 }
 
+.exploreinput {
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.header-input {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: #ebebeb;
+}
+
+input.header-input {
+  border: none;
+}
   /* Медиа-запросы для изменения количества элементов в строке */
   @media (max-width: 768px) {
     .explore {

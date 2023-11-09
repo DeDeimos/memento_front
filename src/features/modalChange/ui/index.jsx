@@ -1,8 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./index.module.scss";
-import { ModalData } from "../../modalData/ui";
 import { useState } from "react";
-const ModalChange = ({ active, setActive }) => {
+const ModalChange = ({ active, setActive, setAnother }) => {
   const history = useNavigate();
   const handleExit = (e) => {
     e.preventDefault();
@@ -16,9 +15,12 @@ const ModalChange = ({ active, setActive }) => {
     return (
       <div className={styles.modal} onClick={() => setActive(false)}>
         <div className={styles.modalBody} onClick={(e) => e.stopPropagation()}>
-          <div className={styles.modalItem}>Поменять пароль</div>
+          <div 
+          onClick={() => {setAnother("password"); setActive(false)}}
+          className={styles.modalItem}
+          >Поменять пароль</div>
           <div
-            // onClick={() => {setPrivacy(true); setActive(false)}}
+            onClick={() => {setAnother("data"); setActive(false)}}
             className={styles.modalItem}
           >
             Приватность и безопасность

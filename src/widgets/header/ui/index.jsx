@@ -1,6 +1,5 @@
 import Logo from "../../../assets/logo.svg";
 import Like from "../../../assets/like.svg";
-import Search from "../../../assets/search.svg";
 import Explore from "../../../assets/explore.svg";
 import Profile from "../../../assets/profile.svg";
 import MiniLogo from "../../../assets/logo-mini.svg";
@@ -23,10 +22,10 @@ const Header = () => {
           <img className={styles.iconMini} src={MiniLogo} onClick={() => setActiveFeed(false)} />
         </Link>
       </div>
-      <div className={styles.headerInput}>
+      {/* <div className={styles.headerInput}>
         <img src={Search} />
         <input className={styles.headerInput} placeholder="Поиск" />
-      </div>
+      </div> */}
       <div className={styles.rightIcons}>
         <img src={Add} onClick={() => {setAciveMoment(!activeMoment); setActiveFeed(false)}} />
         <AddMoment active={activeMoment} setActive={setAciveMoment}/>

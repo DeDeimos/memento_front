@@ -4,9 +4,15 @@ import styles from "./index.module.scss";
 import { useEffect, useState } from "react";
 import { MomentsFeed } from "../../../features/momentsFeed/ui";
 import { getUserById, getUserMoments, getUserFollowers, getUserFollowing } from "../../../entities/user/api";
+import { ModalData } from "../../../features/modalData/ui";
+import { ModalPassword } from "../../../features/modalPassword/ui";
 
 const Profile = () => {
-  const [modalActive, setModalActive] = useState(false);
+  const [modalMainActive, setModalMainActive] = useState(false);
+  const [modalDataActive, setModalDataActive] = useState(false);
+  const [modalPasswordActive, setModalPasswordActive] = useState(false);
+  const [anotherModal, setAnotherModal] = useState("none");
+
   const [user, setUser] = useState(null);
   const [moments, setMoments] = useState(null);
   const [followers, setFollowers] = useState(0);
@@ -30,14 +36,25 @@ const Profile = () => {
       <div className={styles.head}>
         <div className={styles.headBody}>
           <div className={styles.photo}>
+            {user.profilephoto ?
             <img src={user.profilephoto} />
-            {/* <img src={prof} /> */}
+            :
+             <img src={prof} /> 
+          }
           </div>
           <div className={styles.main}>
             <p>{user.name}</p>
-            {/* <p>Vanvik</p> */}
-            <button onClick={() => setModalActive(true)}>Изменить</button>
-            <ModalChange active={modalActive} setActive={setModalActive} />
+            <button onClick={() => setModalMainActive(true)}>Изменить</button>
+            <ModalChange active={modalMainActive} setActive={setModalMainActive} setAnother={setAnotherModal}/>
+
+            {/* <ModalPassword  active={modalPasswordActive} setActive={setModalPasswordActive} />
+            <ModalData active={modalDataActive} setActive={setModalDataActive} />
+            {anotherModal == 'data' ?
+            setModalDataActive(true) :
+            anotherModal == 'password' ?
+            setModalPasswordActive(true)
+            : ""
+          } */}
           </div>
         </div>
       </div>

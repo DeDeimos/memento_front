@@ -1,19 +1,19 @@
 import styles from "./index.module.scss";
 import { PhotoInput } from "../../../shared/ui";
-import {useState} from 'react';
-import {createMoment} from '../../../entities/moment/api'
+import { useState } from "react";
+import { createMoment } from "../../../entities/moment/api";
 
 const AddMoment = ({ active, setActive }) => {
-  const user_id = localStorage.getItem('user_id');
+  const user_id = localStorage.getItem("user_id");
   const [moment, setMoment] = useState({
     author: user_id,
     description: "",
-    image: ""
+    image: "",
   });
 
   const handleChangeDescription = (e) => {
-    setMoment({...moment, description: e.target.value});
-  }
+    setMoment({ ...moment, description: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,8 +21,8 @@ const AddMoment = ({ active, setActive }) => {
       console.log(res);
       setActive(false);
     });
-  }
-  
+  };
+
   if (!active) return null;
   else
     return (
@@ -38,7 +38,9 @@ const AddMoment = ({ active, setActive }) => {
             <div className={styles.textInputTags}>
               <textarea placeholder="Введите тэги..." />
             </div>
-            <button onClick={handleSubmit}>Опубликовать</button>
+            <div className={styles.textInputButton}>
+              <button onClick={handleSubmit}>Опубликовать</button>
+            </div>
           </div>
         </div>
       </div>

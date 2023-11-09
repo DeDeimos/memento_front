@@ -8,10 +8,16 @@ import { ModalData } from "../../../features/modalData/ui";
 import { ModalPassword } from "../../../features/modalPassword/ui";
 
 const Profile = () => {
-  const [modalMainActive, setModalMainActive] = useState(false);
-  const [modalDataActive, setModalDataActive] = useState(false);
-  const [modalPasswordActive, setModalPasswordActive] = useState(false);
-  const [anotherModal, setAnotherModal] = useState("none");
+  // const [modalMainActive, setModalMainActive] = useState(false);
+  // const [modalDataActive, setModalDataActive] = useState(false);
+  // const [modalPasswordActive, setModalPasswordActive] = useState(false);
+  // const [anotherModal, setAnotherModal] = useState("none");
+  
+  const [modals, setModals] = useState ({
+    main: false,
+    data: false,
+    pass: false,
+  })
 
   const [user, setUser] = useState(null);
   const [moments, setMoments] = useState(null);
@@ -44,12 +50,11 @@ const Profile = () => {
           </div>
           <div className={styles.main}>
             <p>{user.name}</p>
-            <button onClick={() => setModalMainActive(true)}>Изменить</button>
-            <ModalChange active={modalMainActive} setActive={setModalMainActive} setAnother={setAnotherModal}/>
-
-            {/* <ModalPassword  active={modalPasswordActive} setActive={setModalPasswordActive} />
-            <ModalData active={modalDataActive} setActive={setModalDataActive} />
-            {anotherModal == 'data' ?
+            <button onClick={() => setModals({...modals, main: true})}>Изменить</button>
+            <ModalChange active={modals} setActive={setModals}/>
+            <ModalPassword  active={modals} setActive={setModals} />
+            <ModalData active={modals} setActive={setModals} />
+            {/* {anotherModal == 'data' ?
             setModalDataActive(true) :
             anotherModal == 'password' ?
             setModalPasswordActive(true)

@@ -1,6 +1,6 @@
 import { ModalChange } from "../../../features/modalChange/ui";
 import styles from "./index.module.scss";
-// import prof from "../../../assets/vanvik_gigachad.png";
+import prof from "../../../assets/vanik.jpg";
 import { useEffect, useState } from "react";
 import { MomentsFeed } from "../../../features/momentsFeed/ui";
 import { getUserById, getUserMoments, getUserFollowers, getUserFollowing } from "../../../entities/user/api";

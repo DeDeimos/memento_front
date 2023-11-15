@@ -56,7 +56,9 @@ const Reg = () => {
       <div className={styles.regBody}>
         <div className={styles.regInputs}>
           {/* <h1>Регистрация</h1> */}
-          <p style={{color: 'red'}}>{error}</p>
+          <p style={{color: 'red', marginBottom: "10px"}}>{error}</p>
+         <p style={{textAlign: "left"}}>Место для вставки аватарки</p>
+          <input type="file"/>
           <input name="email" type="text" placeholder="почта" onChange={handleChange} />
           {/* <input  type="text" placeholder="Имя и фамилия" /> */}
           <input type="text" name="name" placeholder="Имя пользователя" onChange={handleChange} />

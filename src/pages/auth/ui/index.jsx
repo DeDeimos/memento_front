@@ -53,7 +53,7 @@ const Auth = () => {
       <div className={styles.authBody}>
         <div className={styles.authInputs}>
           
-          {error && <p className={styles.error}>{error}</p>}
+          {error && <p  style={{color: 'red', marginBottom: "10px"}}>{error}</p>}
           <input type="text" name='email' placeholder="Почта пользователя" onChange={handleChange} />
           <input type="password" name='password' placeholder="Пароль" onChange={handleChange} />
           

@@ -33,10 +33,10 @@ const AddMoment = ({ active, setActive }) => {
           </div>
           <div className={styles.textInput}>
             <div className={styles.textInputLabel}>
-              <textarea placeholder="Введите описание..." />
+              <textarea style={{padding: "0"}} placeholder="Введите описание..." />
             </div>
             <div className={styles.textInputTags}>
-              <textarea placeholder="Введите тэги..." />
+              <textarea style={{padding: "0"}} placeholder="Введите тэги..." />
             </div>
             <div className={styles.textInputButton}>
               <button onClick={handleSubmit}>Опубликовать</button>

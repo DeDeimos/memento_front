@@ -124,8 +124,10 @@ const Post = ({ key, moment }) => {
         <div className={styles.postBottomCommentsection}>
           {moment.description}
         </div>
-        <div>
-          
+        <div className={styles.comments}>
+              {recentComments.map((comment) => (
+                <Comment key={comment.id} comment={comment} />
+              ))}
         </div>
         <AddComment />
       </div>

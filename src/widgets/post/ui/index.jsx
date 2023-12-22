@@ -43,113 +43,63 @@ function timeAgoFromNow(createdAt) {
   return `${yearsAgo} лет назад`;
 }
 
-// const Post = ({ key, moment }) => {
-//   const [like, setLike] = useState(true);
+const Post = ({ key, moment }) => {
+  const [like, setLike] = useState(true);
 
-//   const [likes, setLikes] = useState(0);
-//   const [recentComments, setResentComments] = useState([]);
+  const [likes, setLikes] = useState(0);
+  const [recentComments, setResentComments] = useState([]);
 
-//   useEffect(() => {
-//     console.log(moment);
-//     getStatisticMoment(moment.id).then((res) => {
-//       console.log(res.data);
-//       console.log(res.data[0].like_count);
-//       console.log(res.data[0].recent_comments);
-//       setLikes((prevStat) => res.data[0].like_count);
-//       setResentComments((prevStat) => res.data[0].recent_comments);
-//       setLike(moment.has_like);
-//       console.log(likes);
-//       console.log("Like:");
-//       console.log(like);
-//       console.log(recentComments);
-//     });
-//   }, []);
+  useEffect(() => {
+    console.log(moment);
+    getStatisticMoment(moment.id).then((res) => {
+      console.log(res.data);
+      console.log(res.data.like_count);
+      console.log(res.data.recent_comments);
+      setLikes((prevStat) => res.data.like_count);
+      setResentComments((prevStat) => res.data.recent_comments);
+      setLike(moment.has_like);
+      console.log(likes);
+      console.log("Like:");
+      console.log(like);
+      console.log(recentComments);
+    });
+  }, []);
 
-//   useEffect(() => {
-//     console.log(likes);
-//   }, [like, likes]);
-//   const user_id = localStorage.getItem('user_id');
+  useEffect(() => {
+    console.log(likes);
+  }, [like, likes]);
+  const user_id = localStorage.getItem('user_id');
 
-//   const changeLike = (e) => {
-//     setLike((prevStat) => !prevStat);
+  const changeLike = (e) => {
+    setLike((prevStat) => !prevStat);
     
-//     if(like){
-//       setLikes(likes - 1);
-//       deleteLike(user_id, moment.id, false);
-//     } else {
-//       setLikes(likes + 1);
-//       likeMoment(user_id, moment.id);
-//     } 
+    if(like){
+      setLikes(likes - 1);
+      deleteLike(user_id, moment.id, false);
+    } else {
+      setLikes(likes + 1);
+      likeMoment(user_id, moment.id);
+    } 
     
-//   };
+  };
 
-//   return (
-//     <div className={styles.post}>
-//       <div className={styles.postTop}>
-//         <div className={styles.postTopInfo}>
-//           <div className={styles.postAuthorLogo}>
-//             {moment.author_info.profilephoto ? (
-//               <img
-//                 className={styles.postAuthorLogo}
-//                 src={moment.author_info.profilephoto}
-//               />
-//             ) : (
-//               <img className={styles.postAuthorLogo} src={Ivan} />
-//             )}
-//           </div>
-//           <div className={styles.postAuthorLabel}>
-//             <b>{moment.author_info.name}</b>
-//             <p>{timeAgoFromNow(moment.created_at)}</p>
-//           </div>
-//         </div>
-//         <div className={styles.postTopMore}>
-//           <img src={More} />
-//         </div>
-//       </div>
-
-//       <div className={styles.postContent}>
-//         <img src={moment.image} className={styles.contentPhoto} />
-//       </div>
-
-//       <div className={styles.postBottom}>
-//         <div className={styles.postBottomActions}>
-//           <div className={styles.actionsLeft}>
-//             <img src={like ? Like : UnLike} onClick={changeLike} />
-//             <img src={Message} />
-//           </div>
-//           <div className={styles.actionsRight}></div>
-//         </div>
-
-//         <div className={styles.postBottomLikes}>{likes} отметок "Нравится"</div>
-//         <div className={styles.postBottomCommentsection}>
-//           {moment.description}
-//         </div>
-//         <AddComment />
-//       </div>
-//     </div>
-//   );
-// };
-
-const Post = () => {
   return (
     <div className={styles.post}>
       <div className={styles.postTop}>
         <div className={styles.postTopInfo}>
           <div className={styles.postAuthorLogo}>
-            {/* {moment.author_info.profilephoto ? (
+            {moment.author_info.profilephoto ? (
               <img
                 className={styles.postAuthorLogo}
                 src={moment.author_info.profilephoto}
               />
             ) : (
               <img className={styles.postAuthorLogo} src={Ivan} />
-            )} */}
-            <img className={styles.postAuthorLogo} src={Ivan} />
+            )}
           </div>
           <div className={styles.postAuthorLabel}>
-            {/* <b>{moment.author_info.name}</b> */}
-            <b>Profile</b>
-            {/* <p>{timeAgoFromNow(moment.created_at)}</p> */}
+            <b>{moment.author_info.name}</b>
+            <p>{timeAgoFromNow(moment.created_at)}</p>
           </div>
         </div>
         <div className={styles.postTopMore}>
@@ -158,31 +108,81 @@ const Post = () => {
       </div>
 
       <div className={styles.postContent}>
-        {/* <img src={moment.image} className={styles.contentPhoto} /> */}
-        <img src={Ivan} className={styles.contentPhoto} />
+        <img src={moment.image} className={styles.contentPhoto} />
       </div>
 
       <div className={styles.postBottom}>
         <div className={styles.postBottomActions}>
           <div className={styles.actionsLeft}>
-            {/* <img src={like ? Like : UnLike} onClick={changeLike} /> */}
-            <img src={Like}/>
+            <img src={like ? Like : UnLike} onClick={changeLike} />
             <img src={Message} />
           </div>
           <div className={styles.actionsRight}></div>
         </div>
 
-        <div className={styles.postBottomLikes}>
-        {/* {likes}  */}
-        10 отметок "Нравится"</div>
+        <div className={styles.postBottomLikes}>{likes} отметок "Нравится"</div>
         <div className={styles.postBottomCommentsection}>
-          {/* {moment.description} */}
-          djflksjgks
+          {moment.description}
         </div>
         <AddComment />
       </div>
     </div>
   );
 };
+
+// const Post = () => {
+//   return (
+//     <div className={styles.post}>
+//       <div className={styles.postTop}>
+//         <div className={styles.postTopInfo}>
+//           <div className={styles.postAuthorLogo}>
+//             {/* {moment.author_info.profilephoto ? (
+//               <img
+//                 className={styles.postAuthorLogo}
+//                 src={moment.author_info.profilephoto}
+//               />
+//             ) : (
+//               <img className={styles.postAuthorLogo} src={Ivan} />
+//             )} */}
+//             <img className={styles.postAuthorLogo} src={Ivan} />
+//           </div>
+//           <div className={styles.postAuthorLabel}>
+//             {/* <b>{moment.author_info.name}</b> */}
+//             <b>Profile</b>
+//             {/* <p>{timeAgoFromNow(moment.created_at)}</p> */}
+//           </div>
+//         </div>
+//         <div className={styles.postTopMore}>
+//           <img src={More} />
+//         </div>
+//       </div>
+
+//       <div className={styles.postContent}>
+//         {/* <img src={moment.image} className={styles.contentPhoto} /> */}
+//         <img src={Ivan} className={styles.contentPhoto} />
+//       </div>
+
+//       <div className={styles.postBottom}>
+//         <div className={styles.postBottomActions}>
+//           <div className={styles.actionsLeft}>
+//             {/* <img src={like ? Like : UnLike} onClick={changeLike} /> */}
+//             <img src={Like}/>
+//             <img src={Message} />
+//           </div>
+//           <div className={styles.actionsRight}></div>
+//         </div>
+
+//         <div className={styles.postBottomLikes}>
+//         {/* {likes}  */}
+//         10 отметок "Нравится"</div>
+//         <div className={styles.postBottomCommentsection}>
+//           {/* {moment.description} */}
+//           djflksjgks
+//         </div>
+//         <AddComment />
+//       </div>
+//     </div>
+//   );
+// };
 
 export { Post };

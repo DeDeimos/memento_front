@@ -1,5 +1,5 @@
 import Logo from "../../../assets/logo.svg";
-import Like from "../../../assets/like.svg";
+import Like from "../../../assets/unlike.svg";
 import Explore from "../../../assets/explore.svg";
 import Profile from "../../../assets/profile.svg";
 import MiniLogo from "../../../assets/logo-mini.svg";
@@ -18,7 +18,7 @@ const Header = () => {
     <div className={styles.header}>
       <div className={styles.headerLogo}>
         <Link to="/feed">
-          <img className={styles.icon} src={Logo} onClick={() => setActiveFeed(false)} />
+          <img className={styles.icon} src='http://185.204.2.233:8180/logo.svg' onClick={() => setActiveFeed(false)} />
           <img className={styles.iconMini} src={MiniLogo} onClick={() => setActiveFeed(false)} />
         </Link>
       </div>

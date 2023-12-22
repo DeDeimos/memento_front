@@ -14,34 +14,15 @@ const Feed = () => {
   if (!moments) return null;
 
   return (
-    <div className={styles.feed}>
-      <InfiniteScroll
-        dataLength={items.length} //This is important field to render the next data
-        next={fetchData}
-        hasMore={true}
-        loader={<h4>Loading...</h4>}
-        endMessage={
-          <p style={{ textAlign: "center" }}>
-            <b>Yay! You have seen it all</b>
-          </p>
-        }
-      >
-        {/* <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post /> */}
+   <div className={styles.feed}>
 
-        {/* {!moments && <p>Нет публикаций</p>}
+        {!moments && <p>Нет публикаций</p>}
           {moments.map((moment) => {
             return (
               <Post key={moment.id} moment={moment}/>
             )
-          })} */}
-      </InfiniteScroll>
-    </div>
+          })}
+     </div>     
   );
 };
 

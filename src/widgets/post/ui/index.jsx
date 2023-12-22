@@ -7,6 +7,7 @@ import styles from "./index.module.scss";
 import { AddComment } from "../../../features/addComment/ui";
 import { useState, useEffect, useCallback } from "react";
 import { deleteLike, getStatisticMoment, likeMoment } from "../../../entities/moment/api";
+import { Comment } from "../../../features/comment/ui";
 
 function timeAgoFromNow(createdAt) {
   const currentDate = new Date();

@@ -124,65 +124,14 @@ const Post = ({ key, moment }) => {
         <div className={styles.postBottomCommentsection}>
           {moment.description}
         </div>
+        <div>
+          
+        </div>
         <AddComment />
       </div>
     </div>
   );
 };
 
-// const Post = () => {
-//   return (
-//     <div className={styles.post}>
-//       <div className={styles.postTop}>
-//         <div className={styles.postTopInfo}>
-//           <div className={styles.postAuthorLogo}>
-//             {/* {moment.author_info.profilephoto ? (
-//               <img
-//                 className={styles.postAuthorLogo}
-//                 src={moment.author_info.profilephoto}
-//               />
-//             ) : (
-//               <img className={styles.postAuthorLogo} src={Ivan} />
-//             )} */}
-//             <img className={styles.postAuthorLogo} src={Ivan} />
-//           </div>
-//           <div className={styles.postAuthorLabel}>
-//             {/* <b>{moment.author_info.name}</b> */}
-//             <b>Profile</b>
-//             {/* <p>{timeAgoFromNow(moment.created_at)}</p> */}
-//           </div>
-//         </div>
-//         <div className={styles.postTopMore}>
-//           <img src={More} />
-//         </div>
-//       </div>
-
-//       <div className={styles.postContent}>
-//         {/* <img src={moment.image} className={styles.contentPhoto} /> */}
-//         <img src={Ivan} className={styles.contentPhoto} />
-//       </div>
-
-//       <div className={styles.postBottom}>
-//         <div className={styles.postBottomActions}>
-//           <div className={styles.actionsLeft}>
-//             {/* <img src={like ? Like : UnLike} onClick={changeLike} /> */}
-//             <img src={Like}/>
-//             <img src={Message} />
-//           </div>
-//           <div className={styles.actionsRight}></div>
-//         </div>
-
-//         <div className={styles.postBottomLikes}>
-//         {/* {likes}  */}
-//         10 отметок "Нравится"</div>
-//         <div className={styles.postBottomCommentsection}>
-//           {/* {moment.description} */}
-//           djflksjgks
-//         </div>
-//         <AddComment />
-//       </div>
-//     </div>
-//   );
-// };
 
 export { Post };

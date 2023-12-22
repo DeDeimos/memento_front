@@ -35,7 +35,7 @@ function timeAgoFromNow(createdAt) {
     return `${yearsAgo} лет назад`;
 }
 
-const Comment = ({comment}) => {
+const Comment = ({key, comment}) => {
   return (
     <div className={styles.comment}>
         <div className={styles.commentAuthor}>

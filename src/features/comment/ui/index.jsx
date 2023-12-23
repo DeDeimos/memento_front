@@ -1,4 +1,8 @@
 import styles from "./index.module.scss";
+import Like from "../../../assets/like.svg";
+import { useState, useEffect, useCallback } from "react";
+import UnLike from "../../../assets/unlike.svg";
+import { likeComment, deleteLike } from "../../../entities/moment/api";
 
 function timeAgoFromNow(createdAt) {
     const currentDate = new Date();
@@ -35,11 +39,23 @@ function timeAgoFromNow(createdAt) {
     return `${yearsAgo} лет назад`;
 }
 
-const Comment = (comment) => {
+const Comment = ({key, comment}) => {
+    console.log(comment);
+    const [like, setLike] = useState(comment.has_user_liked);
+    const user_id = localStorage.getItem('user_id');
+    const changeLike = () => {
+        setLike(!like);
+        if(like){
+            deleteLike((user_id), false, comment.id);
+        } else {
+            likeComment(user_id, comment.id);
+        }
+    };
   return (
     <div className={styles.comment}>
         <div className={styles.commentAuthor}>
             <div className={styles.commentAuthorName}>{comment.author.name}</div>
+            <div className={styles.commentLike}> <img src={like ? Like : UnLike} onClick={changeLike} /> </div>
         </div>
         <div className={styles.commentText}>{comment.text}</div>
         <div className={styles.commentDate}>{timeAgoFromNow(comment.created_at)}</div>

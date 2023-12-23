@@ -47,6 +47,7 @@ const Reg = () => {
       }
       localStorage.setItem('user_id', res.id);
       localStorage.setItem('isAuth', true);
+      localStorage.setItem('user_name', res.name);
       history("/feed");
     });
   }  

@@ -45,23 +45,30 @@ function timeAgoFromNow(createdAt) {
 }
 
 const Post = ({ key, moment }) => {
-  const [like, setLike] = useState(true);
+  const [like, setLike] = useState(false);
 
   const [likes, setLikes] = useState(0);
+  // const [recentComments, setResentComments] = useState([]);
   const [recentComments, setResentComments] = useState([]);
+  // take from local storage
+  const user_id = localStorage.getItem('user_id');
 
   useEffect(() => {
     console.log(moment);
-    getStatisticMoment(moment.id).then((res) => {
+    getStatisticMoment(moment.id, user_id).then((res) => {
       console.log(res.data);
       console.log(res.data.like_count);
       console.log(res.data.recent_comments);
       setLikes((prevStat) => res.data.like_count);
-      setResentComments((prevStat) => res.data.recent_comments);
+      setResentComments((prevComments) => {
+        // Используйте предыдущее состояние для гарантии актуальности данных
+        return [...prevComments, ...res.data.recent_comments];
+      });
       setLike(moment.has_like);
       console.log(likes);
       console.log("Like:");
       console.log(like);
+      console.log("Recent comments:");
       console.log(recentComments);
     });
   }, []);
@@ -69,7 +76,7 @@ const Post = ({ key, moment }) => {
   useEffect(() => {
     console.log(likes);
   }, [like, likes]);
-  const user_id = localStorage.getItem('user_id');
+  // const user_id = localStorage.getItem('user_id');
 
   const changeLike = (e) => {
     setLike((prevStat) => !prevStat);
@@ -82,6 +89,11 @@ const Post = ({ key, moment }) => {
       likeMoment(user_id, moment.id);
     } 
     
+  };
+
+  const addCommentFunction = (newComment) => {
+    // Обновляем массив комментариев
+    setResentComments([newComment, ...recentComments]);
   };
 
   return (
@@ -130,7 +142,7 @@ const Post = ({ key, moment }) => {
                 <Comment key={comment.id} comment={comment} />
               ))}
         </div>
-        <AddComment />
+        <AddComment moment_id={moment.id} addCommentFunction={addCommentFunction}/>
       </div>
     </div>
   );

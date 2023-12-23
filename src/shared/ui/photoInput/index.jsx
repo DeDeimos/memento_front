@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./index.module.scss";
 
-const PhotoInput = () => {
+const PhotoInput = ({ onFileSelect }) => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [previewURL, setPreviewURL] = useState(null);
 
@@ -11,6 +11,7 @@ const PhotoInput = () => {
       setSelectedFile(file);
       const imageURL = URL.createObjectURL(file);
       setPreviewURL(imageURL);
+      onFileSelect(file);
     }
   };
 

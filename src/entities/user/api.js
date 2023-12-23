@@ -6,10 +6,26 @@ export const getUsers = async () => {
 };
 
 export const updateUser = async (id, user) => {
-  const response = await instance.put(`/api/users/edit/${id}`, user);
+  console.log('in api');
+  console.log(user);
+  const response = await instance.put(`/api/users/edit/${id}/`, user);
   return response.data;
 };
 
+export const updatePassword = async (id, newPassword) => {
+  const response = await instance.post(`/api/users/changepass/${id}/`, {
+    new_password: newPassword,
+  });
+  return response.data;
+};
+
+export const updateNameAndEmail = async (id, newName, newEmail) => {
+  const response = await instance.post(`/api/users/changedata/${id}/`, {
+    new_name: newName,
+    new_email: newEmail,
+  });
+  return response.data;
+};
 export const deleteUser = async (id) => {
   const response = await instance.delete(`/api/users/delete/${id}`);
   return response.data;

@@ -68,3 +68,21 @@ export const getUserFollowingMoments = async (id) => {
   const response = await instance.get(`/api/users/followingmoments/${id}/`);
   return response.data;
 }
+
+export const isFollowing = async (id, user_id) => {
+  const response = await instance.get(`/api/users/isfollowing/${id}/${user_id}/`);
+  return response.data;
+}
+
+export const followUser = async (id, user_id) => {
+  const response = await instance.post(`/api/follows/create/`, {
+    follower: id,
+    following: user_id
+  });
+  return response.data;
+}
+
+export const unfollowUser = async (id, user_id) => {
+  const response = await instance.delete(`/api/follows/delete/${id}/${user_id}/`);
+  return response.data;
+}

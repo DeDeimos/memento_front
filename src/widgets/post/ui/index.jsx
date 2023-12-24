@@ -6,7 +6,12 @@ import Ivan from "../../../assets/vanik.jpg";
 import styles from "./index.module.scss";
 import { AddComment } from "../../../features/addComment/ui";
 import { useState, useEffect, useCallback } from "react";
-import { deleteLike, getStatisticMoment, likeMoment } from "../../../entities/moment/api";
+import {
+  deleteLike,
+  getMomentTags,
+  getStatisticMoment,
+  likeMoment,
+} from "../../../entities/moment/api";
 import { Comment } from "../../../features/comment/ui";
 
 function timeAgoFromNow(createdAt) {
@@ -50,27 +55,35 @@ const Post = ({ key, moment }) => {
   const [likes, setLikes] = useState(0);
   // const [recentComments, setResentComments] = useState([]);
   const [recentComments, setResentComments] = useState([]);
+  const [tags, setTags] = useState([]);
   // take from local storage
-  const user_id = localStorage.getItem('user_id');
+  const user_id = localStorage.getItem("user_id");
 
   useEffect(() => {
     console.log(moment);
-    getStatisticMoment(moment.id, user_id).then((res) => {
-      console.log(res.data);
-      console.log(res.data.like_count);
-      console.log(res.data.recent_comments);
-      setLikes((prevStat) => res.data.like_count);
-      setResentComments((prevComments) => {
-        // Используйте предыдущее состояние для гарантии актуальности данных
-        return [...prevComments, ...res.data.recent_comments];
+    getStatisticMoment(moment.id, user_id)
+      .then((res) => {
+        console.log(res.data);
+        console.log(res.data.like_count);
+        console.log(res.data.recent_comments);
+        setLikes((prevStat) => res.data.like_count);
+        setResentComments((prevComments) => {
+          // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+          return [...prevComments, ...res.data.recent_comments];
+        });
+        setLike(moment.has_like);
+        console.log(likes);
+        console.log("Like:");
+        console.log(like);
+        console.log("Recent comments:");
+        console.log(recentComments);
+      })
+      .then(() => {
+        getMomentTags(moment.id).then((res) => {
+          console.log(res);
+          setTags(res);
+        });
       });
-      setLike(moment.has_like);
-      console.log(likes);
-      console.log("Like:");
-      console.log(like);
-      console.log("Recent comments:");
-      console.log(recentComments);
-    });
   }, []);
 
   useEffect(() => {
@@ -80,19 +93,18 @@ const Post = ({ key, moment }) => {
 
   const changeLike = (e) => {
     setLike((prevStat) => !prevStat);
-    
-    if(like){
+
+    if (like) {
       setLikes(likes - 1);
       deleteLike(user_id, moment.id, false);
     } else {
       setLikes(likes + 1);
       likeMoment(user_id, moment.id);
-    } 
-    
+    }
   };
 
   const addCommentFunction = (newComment) => {
-    // Обновляем массив комментариев
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     setResentComments([newComment, ...recentComments]);
   };
 
@@ -132,21 +144,27 @@ const Post = ({ key, moment }) => {
           </div>
           <div className={styles.actionsRight}></div>
         </div>
-
+        <div className={styles.postBottomTags}>
+          {tags.map((tag) => (
+            `#${tag.name}`
+          ))}
+        </div>
         <div className={styles.postBottomLikes}>{likes} РѕС‚РјРµС‚РѕРє "РќСЂР°РІРёС‚СЃСЏ"</div>
         <div className={styles.postBottomCommentsection}>
           {moment.description}
         </div>
         <div className={styles.comments}>
-              {recentComments.map((comment) => (
-                <Comment key={comment.id} comment={comment} />
-              ))}
+          {recentComments.map((comment) => (
+            <Comment key={comment.id} comment={comment} />
+          ))}
         </div>
-        <AddComment moment_id={moment.id} addCommentFunction={addCommentFunction}/>
+        <AddComment
+          moment_id={moment.id}
+          addCommentFunction={addCommentFunction}
+        />
       </div>
     </div>
   );
 };
-
 
 export { Post };

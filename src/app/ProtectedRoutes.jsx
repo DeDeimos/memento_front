@@ -14,12 +14,13 @@ const ProtectedRoutes = () => {
     // Если пользователь не авторизован, перенаправляем на страницу входа
     return <Navigate to="/auth" />;
   }
-
+  const user_id = localStorage.getItem("user_id");
   return (
     <Routes>
       {/* Используйте / для указания полного пути */}
       <Route path="/" element={<Layout />}>
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile" element={<Profile id={user_id} />} />
+        <Route path={`/profile/:id`} element={<Profile />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/feed" element={<Feed />} />
       </Route>

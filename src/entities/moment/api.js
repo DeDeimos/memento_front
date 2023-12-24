@@ -79,3 +79,17 @@ export const addTag = async (tag) => {
   const response = await instance.post("/api/tags/create/", tag);
   return response;
 }
+
+export const search = async (query) => {
+  const response = await instance.get(`/api/search/`, {
+    params: {
+      query: query,
+    },
+  });
+  return response.data;
+};
+
+export const getMomentTags = async (moment_id) => {
+  const response = await instance.get(`/api/tags/moment/${moment_id}/`);
+  return response.data;
+};

@@ -1,5 +1,13 @@
 import styles from "./index.module.scss";
 import Photo from "../../../assets/vanik.jpg";
+import { Centrifuge } from "centrifuge";
+
+
+// const channel = Centrifuge.subscribe('like_channel_123'); // �������� 123 �� ������������� ������������
+// channel.on('publish', (message) => {
+//   // ��������� ����������� �����������.
+//   console.log(message);
+// });
 
 const EventFeed = ({ active, setAcive }) => {
   if (!active) return null;

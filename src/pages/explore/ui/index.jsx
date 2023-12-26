@@ -78,12 +78,14 @@ const Explore = () => {
             )}
             {searchMoments.map((item) => (
               <div className={styles.exploreMomentsItem}>
-                <div className={styles.exploreMomentsItemPhoto}>
-                  <img src={item.image} />
-                </div>
-                <div className={styles.exploreMomentsItemInfo}>
-                  <p>{item.description}</p>
-                </div>
+                <Link to={`/moment/${item.id}`}>
+                  <div className={styles.exploreMomentsItemPhoto}>
+                    <img src={item.image} />
+                  </div>
+                  <div className={styles.exploreMomentsItemInfo}>
+                    <p>{item.description}</p>
+                  </div>
+                </Link>
               </div>
             ))}
           </div>

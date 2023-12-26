@@ -61,16 +61,17 @@ const Post = ({ key, moment }) => {
 
   useEffect(() => {
     console.log(moment);
-    getStatisticMoment(moment.id, user_id)
+    getStatisticMoment(moment.id, user_id, 2)
       .then((res) => {
         console.log(res.data);
         console.log(res.data.like_count);
         console.log(res.data.recent_comments);
         setLikes((prevStat) => res.data.like_count);
-        setResentComments((prevComments) => {
-          // ����������� ���������� ��������� ��� �������� ������������ ������
-          return [...prevComments, ...res.data.recent_comments];
-        });
+        // setResentComments((prevComments) => {
+        //   // ����������� ���������� ��������� ��� �������� ������������ ������
+        //   return [...prevComments, ...res.data.recent_comments];
+        // });
+        setResentComments((prevComments) => res.data.recent_comments);
         setLike(moment.has_like);
         console.log(likes);
         console.log("Like:");

@@ -64,10 +64,20 @@ export const getUserFollowing = async (id) => {
   return response.data;
 }
 
-export const getUserFollowingMoments = async (id) => {
-  const response = await instance.get(`/api/users/followingmoments/${id}/`);
+// export const getUserFollowingMoments = async (id) => {
+//   const response = await instance.get(`/api/users/followingmoments/${id}/`);
+//   return response.data;
+// }
+
+export const getUserFollowingMoments = async (id, limit = 5, offset = 0) => {
+  const response = await instance.get(`/api/users/followingmoments/${id}/`, {
+    params: {
+      limit,
+      offset,
+    },
+  });
   return response.data;
-}
+};
 
 export const isFollowing = async (id, user_id) => {
   const response = await instance.get(`/api/users/isfollowing/${id}/${user_id}/`);

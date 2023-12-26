@@ -18,14 +18,25 @@ export const createMoment = async (momentData) => {
   return response.data;
 };
 
-export const getStatisticMoment = async (moment_id, user_id) => {
+export const getStatisticMoment = async (moment_id, user_id, comment_count) => {
   console.log(moment_id);
   console.log(user_id);
+
+  // Передаем параметр comment_count, если он определен
+  const params = comment_count ? { params: { comment_count } } : {};
+
   const response = await instance.get(
-    `/api/moments/statistic/${moment_id}/${user_id}/`
+    `/api/moments/statistic/${moment_id}/${user_id}/`,
+    params  // Передаем параметры запроса здесь
   );
+
   return response;
 };
+
+export const getMoment = async (moment_id, user_id) => {
+  const response = await instance.get(`/api/moments/${moment_id}/${user_id}/`);
+  return response.data;
+}
 
 export const likeMoment = async (user_id, moment_id) => {
   const response = await instance.post(`/api/likes/create/`, {

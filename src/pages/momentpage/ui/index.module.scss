@@ -1,0 +1,100 @@
+.content {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+.post {
+    display: block;
+    width: 470px;
+    height: fit-content;
+    border-bottom: 1px solid #000;
+    /* margin-left: 150px; */
+}
+
+.post-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5px 10px 0px;
+}
+
+.post-top-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.post-author-logo {
+    max-width: 25px;
+    max-height: 25px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+img.post-author-logo {
+    width: 100%;
+    height: auto;
+}
+
+.post-author-label {
+    display: flex;
+    align-items: center;
+}
+
+.post-author-label b {
+    font-size: 14px;
+    margin-right: 3px;
+    color: black;
+}
+
+.post-author-label p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #737373;
+}
+
+.post-content {
+  width: 100%;  
+}
+
+.post-content img {
+    width: 100%;
+}
+
+.actions-left img {
+    padding: 8px;
+}
+
+.post-bottom-addcomment button {
+    border: none;
+    background-color: inherit;
+    color: #0095F6;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.post-bottom-addcomment {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .post-bottom-addcomment textarea {
+    width: 100%;
+    overflow-y: hidden; /* Автоматически скрывает вертикальную полосу прокрутки */
+    border: 1px solid #ccc;
+    padding: 10px;
+    outline: none;
+    border: none;
+
+  }
+
+.post-bottom-addcomment textarea:focus {
+    outline: 2px solid transparent; /* Делаем обводку прозрачной */
+  }
+
+  @media (max-width: 425px) {
+    .post {
+        width: 100%;
+        margin-left: 0;
+    }
+}

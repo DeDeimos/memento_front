@@ -19,8 +19,8 @@ export const createMoment = async (momentData) => {
 };
 
 export const getStatisticMoment = async (moment_id, user_id, comment_count) => {
-  console.log(moment_id);
-  console.log(user_id);
+  // console.log(moment_id);
+  // console.log(user_id);
 
   // Передаем параметр comment_count, если он определен
   const params = comment_count ? { params: { comment_count } } : {};

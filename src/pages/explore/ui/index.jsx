@@ -54,7 +54,10 @@ const Explore = () => {
               <Link to={`/profile/${item.id}`}>
                 <div className={styles.exploreUsersItem}>
                   <div className={styles.exploreUsersItemPhoto}>
-                    <img src={item.profilephoto} />
+                    <img 
+                    src={item.profilephoto} 
+                    style={{ maxWidth: "100%", maxHeight: "80px", height: "60%", borderRadius: "50%", objectFit: "cover", }}
+                    />
                   </div>
                   <div className={styles.exploreUsersItemInfo}>
                     <h3>{item.name}</h3>
@@ -80,7 +83,10 @@ const Explore = () => {
               <div className={styles.exploreMomentsItem}>
                 <Link to={`/moment/${item.id}`}>
                   <div className={styles.exploreMomentsItemPhoto}>
-                    <img src={item.image} />
+                    <img 
+                    src={item.image} 
+                    style={{ maxWidth: "100%", maxHeight: "200px", height: "60%", }}
+                    />
                   </div>
                   <div className={styles.exploreMomentsItemInfo}>
                     <p>{item.description}</p>

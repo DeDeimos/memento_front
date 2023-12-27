@@ -60,12 +60,12 @@ const Post = ({ key, moment }) => {
   const user_id = localStorage.getItem("user_id");
 
   useEffect(() => {
-    console.log(moment);
+    // console.log(moment);
     getStatisticMoment(moment.id, user_id, 2)
       .then((res) => {
-        console.log(res.data);
-        console.log(res.data.like_count);
-        console.log(res.data.recent_comments);
+        // console.log(res.data);
+        // console.log(res.data.like_count);
+        // console.log(res.data.recent_comments);
         setLikes((prevStat) => res.data.like_count);
         // setResentComments((prevComments) => {
         //   // ����������� ���������� ��������� ��� �������� ������������ ������
@@ -73,22 +73,22 @@ const Post = ({ key, moment }) => {
         // });
         setResentComments((prevComments) => res.data.recent_comments);
         setLike(moment.has_like);
-        console.log(likes);
-        console.log("Like:");
-        console.log(like);
-        console.log("Recent comments:");
-        console.log(recentComments);
+        // console.log(likes);
+        // console.log("Like:");
+        // console.log(like);
+        // console.log("Recent comments:");
+        // console.log(recentComments);
       })
       .then(() => {
         getMomentTags(moment.id).then((res) => {
-          console.log(res);
+          // console.log(res);
           setTags(res);
         });
       });
   }, []);
 
   useEffect(() => {
-    console.log(likes);
+    // console.log(likes);
   }, [like, likes]);
   // const user_id = localStorage.getItem('user_id');
 

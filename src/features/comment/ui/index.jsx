@@ -40,7 +40,7 @@ function timeAgoFromNow(createdAt) {
 }
 
 const Comment = ({key, comment}) => {
-    console.log(comment);
+    // console.log(comment);
     const [like, setLike] = useState(comment.has_user_liked);
     const user_id = localStorage.getItem('user_id');
     const changeLike = () => {

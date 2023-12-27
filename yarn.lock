@@ -413,6 +413,11 @@
   dependencies:
     "@babel/types" "^7.20.7"
 
+"@types/long@^4.0.1":
+  "integrity" "sha512-MqTGEo5bj5t157U6fA/BiDynNkn0YknVdh48CMPkTSpFTVmvao5UQmm7uEF6xBEo7qIMAlY/JSleYaE6VOdpaA=="
+  "resolved" "https://registry.npmjs.org/@types/long/-/long-4.0.2.tgz"
+  "version" "4.0.2"
+
 "@types/node@>= 14", "@types/node@>=13.7.0":
   "integrity" "sha512-nNPsNE65wjMxEKI93yOP+NPGGBJz/PoN3kZsVLee0XMiJolxSekEVD8wRwBUBqkwc7UWop0edW50yrCQW4CyRw=="
   "resolved" "https://registry.npmjs.org/@types/node/-/node-20.10.5.tgz"
@@ -651,13 +656,12 @@
   "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001549.tgz"
   "version" "1.0.30001549"
 
-"centrifuge@^5.0.1":
-  "integrity" "sha512-u0Lo2Xy/rfrC5H6UzbKS0MVoS72NbUgwmY3/Y0GnCWgRcQbyk8lFBBSxudp8PIw7YiWRJvb35BQjtI0Vmo3LsA=="
-  "resolved" "https://registry.npmjs.org/centrifuge/-/centrifuge-5.0.1.tgz"
-  "version" "5.0.1"
+"centrifuge@^2.8.5":
+  "integrity" "sha512-t06HyieeB2k7uSJSbVM4e7xMF+mfY8xvDtTJLF95ho0ba/X4MSoZcisi2PBzdCLyxG2BhkYW1Wcg6RUiPYTIlQ=="
+  "resolved" "https://registry.npmjs.org/centrifuge/-/centrifuge-2.8.5.tgz"
+  "version" "2.8.5"
   dependencies:
-    "events" "^3.3.0"
-    "protobufjs" "^7.2.5"
+    "protobufjs" "^6.11.2"
 
 "chalk@^2.4.2":
   "integrity" "sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ=="
@@ -1053,11 +1057,6 @@
   "integrity" "sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g=="
   "resolved" "https://registry.npmjs.org/esutils/-/esutils-2.0.3.tgz"
   "version" "2.0.3"
-
-"events@^3.3.0":
-  "integrity" "sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q=="
-  "resolved" "https://registry.npmjs.org/events/-/events-3.3.0.tgz"
-  "version" "3.3.0"
 
 "fast-deep-equal@^3.1.1", "fast-deep-equal@^3.1.3":
   "integrity" "sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q=="
@@ -1598,10 +1597,10 @@
   "resolved" "https://registry.npmjs.org/lodash.merge/-/lodash.merge-4.6.2.tgz"
   "version" "4.6.2"
 
-"long@^5.0.0":
-  "integrity" "sha512-lcHwpNoggQTObv5apGNCTdJrO69eHOZMi4BNC+rTLER8iHAqGrUVeLh/irVIM7zTw2bOXA8T6uNPeujwOLg/2Q=="
-  "resolved" "https://registry.npmjs.org/long/-/long-5.2.3.tgz"
-  "version" "5.2.3"
+"long@^4.0.0":
+  "integrity" "sha512-XsP+KhQif4bjX1kbuSiySJFNAehNxgLb6hPRGJ9QsUr8ajHkuXGdrHmFUTUUXhDwVX2R5bY4JNZEwbUiMhV+MA=="
+  "resolved" "https://registry.npmjs.org/long/-/long-4.0.0.tgz"
+  "version" "4.0.0"
 
 "loose-envify@^1.1.0", "loose-envify@^1.4.0":
   "integrity" "sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q=="
@@ -1814,10 +1813,10 @@
     "object-assign" "^4.1.1"
     "react-is" "^16.13.1"
 
-"protobufjs@^7.2.5":
-  "integrity" "sha512-gGXRSXvxQ7UiPgfw8gevrfRWcTlSbOFg+p/N+JVJEK5VhueL2miT6qTymqAmjr1Q5WbOCyJbyrk6JfWKwlFn6A=="
-  "resolved" "https://registry.npmjs.org/protobufjs/-/protobufjs-7.2.5.tgz"
-  "version" "7.2.5"
+"protobufjs@^6.11.2":
+  "integrity" "sha512-5kQWPaJHi1WoCpjTGszzQ32PG2F4+wRY6BmAT4Vfw56Q2FZ4YZzK20xUYQH4YkfehY1e6QSICrJquM6xXZNcrw=="
+  "resolved" "https://registry.npmjs.org/protobufjs/-/protobufjs-6.11.4.tgz"
+  "version" "6.11.4"
   dependencies:
     "@protobufjs/aspromise" "^1.1.2"
     "@protobufjs/base64" "^1.1.2"
@@ -1829,8 +1828,9 @@
     "@protobufjs/path" "^1.1.2"
     "@protobufjs/pool" "^1.1.0"
     "@protobufjs/utf8" "^1.1.0"
+    "@types/long" "^4.0.1"
     "@types/node" ">=13.7.0"
-    "long" "^5.0.0"
+    "long" "^4.0.0"
 
 "proxy-from-env@^1.1.0":
   "integrity" "sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg=="

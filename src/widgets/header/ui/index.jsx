@@ -32,7 +32,7 @@ const Header = () => {
         <Link to="/explore">
           <img src={Explore} onClick={() => {setActiveFeed(false); setAciveMoment(false)}} />
         </Link>
-        <img src={Like} onClick={() => {setActiveFeed(!activeFeed); setAciveMoment(false)}} />
+        <img src={Like} onClick={() => {setActiveFeed(!activeFeed); setAciveMoment(false); console.log(activeFeed)}} />
         <EventFeed active={activeFeed} setAcive={setActiveFeed} />
         <Link to="/profile">
           <img src={Profile} onClick={() => {setActiveFeed(false); setAciveMoment(false)} } />

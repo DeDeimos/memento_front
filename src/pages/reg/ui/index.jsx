@@ -61,7 +61,21 @@ const Reg = () => {
       localStorage.setItem('isAuth', true);
       localStorage.setItem('user_name', res.name);
       history("/feed");
-    });
+    })
+      .catch((err) => {
+        console.log("err")
+        console.log(err.response.data);
+        if(err.response.data.email){
+          setError('Пользователь с такой почтой уже существует');
+          return;
+        }
+        if(err.response.data.name){
+          setError('Пользователь с таким именем уже существует');
+          return;
+        }
+        // setError('Неправильные учетные данные');
+      });
+
   }
 
   return (

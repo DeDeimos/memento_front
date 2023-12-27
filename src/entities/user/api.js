@@ -56,7 +56,10 @@ export const createUser = async (user, photo) => {
   formData.append("name", user.name);
   formData.append("email", user.email);
   formData.append("password", user.password);
-  formData.append("profilephoto", photo);
+  if(user.profile_photo) {
+    formData.append("profile_photo", user.profile_photo);
+  }
+  // formData.append("profilephoto", photo);
   console.log('in api');
   console.log(formData);
   const response = await instance.post("/api/users/create", formData, {

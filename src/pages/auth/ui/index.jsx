@@ -42,6 +42,11 @@ const Auth = () => {
       localStorage.setItem('user_id', res.id);
       localStorage.setItem('isAuth', true);
       history("/feed");
+    })
+    .catch((err) => {
+      console.log("err")
+      console.log(err);
+      setError('Неправильные учетные данные');
     });
     // if (login !== '' && password !== '') {
     //   dispatch(loginUser(login, password));

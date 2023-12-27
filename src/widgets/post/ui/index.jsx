@@ -4,6 +4,7 @@ import UnLike from "../../../assets/unlike.svg";
 import Message from "../../../assets/message.svg";
 import Ivan from "../../../assets/vanik.jpg";
 import styles from "./index.module.scss";
+import { Link } from "react-router-dom";
 import { AddComment } from "../../../features/addComment/ui";
 import { useState, useEffect, useCallback } from "react";
 import {
@@ -141,7 +142,9 @@ const Post = ({ key, moment }) => {
         <div className={styles.postBottomActions}>
           <div className={styles.actionsLeft}>
             <img src={like ? Like : UnLike} onClick={changeLike} />
-            <img src={Message} />
+            <Link to={`/moment/${moment.id}`}>
+              <img src={Message} />
+            </Link>
           </div>
           <div className={styles.actionsRight}></div>
         </div>

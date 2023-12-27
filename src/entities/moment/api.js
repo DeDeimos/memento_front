@@ -104,3 +104,8 @@ export const getMomentTags = async (moment_id) => {
   const response = await instance.get(`/api/tags/moment/${moment_id}/`);
   return response.data;
 };
+
+export const getPopularMoments = async () => {
+  const response = await instance.get(`/api/moments/popular/`);
+  return response.data;
+}

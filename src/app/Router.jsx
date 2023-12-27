@@ -20,10 +20,6 @@ export const router = createBrowserRouter([
                 element: <PrivateRoute />,
                 children: [
                     {
-                        path: "/",
-                        element: <Feed />,
-                    },
-                    {
                         path: "/profile",
                         element: <Profile id={user_id} />,
                     },
@@ -51,15 +47,11 @@ export const router = createBrowserRouter([
         element: <PublicRoute />,
         children: [
         {
-            path: "/",
-            element: <Auth />,
-        },
-        {
             path: "/auth",
             element: <Auth />,
         },
         {
-            path: "/registration",
+            path: "/reg",
             element: <Reg />,
         },
         ],

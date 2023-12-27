@@ -25,6 +25,12 @@ const ModalChange = ({ active, setActive}) => {
           >
             Приватность и безопасность
           </div>
+          <div
+            onClick={() => setActive({...active, main: false, photo: true})}
+            className={styles.modalItem}
+          >
+            Аватарка
+          </div>
           {/* <ModalData active={privacy} setActive={setPrivacy} /> */}
           <div className={styles.modalItem} onClick={handleExit}>
             Выйти

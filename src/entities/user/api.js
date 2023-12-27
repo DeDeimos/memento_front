@@ -26,18 +26,48 @@ export const updateNameAndEmail = async (id, newName, newEmail) => {
   });
   return response.data;
 };
+
+export const updateProfilephoto = async (id, newProfilephoto) => {
+  const formData = new FormData();
+  formData.append("new_profile_photo", newProfilephoto);
+  const response = await instance.post(`/api/users/changeprofilephoto/${id}/`, formData, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
+  return response.data;
+}
+
 export const deleteUser = async (id) => {
   const response = await instance.delete(`/api/users/delete/${id}`);
   return response.data;
 };
 
-export const createUser = async (user) => {
+// export const createUser = async (user) => {
+//   console.log('in api');
+//   console.log(user);
+//   const response = await instance.post("/api/users/create", user);
+//   console.log(response.data);
+//   return response.data;
+// };
+
+export const createUser = async (user, photo) => {
+  const formData = new FormData();
+  formData.append("name", user.name);
+  formData.append("email", user.email);
+  formData.append("password", user.password);
+  formData.append("profilephoto", photo);
   console.log('in api');
-  console.log(user);
-  const response = await instance.post("/api/users/create", user);
+  console.log(formData);
+  const response = await instance.post("/api/users/create", formData, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
   console.log(response.data);
   return response.data;
 };
+
 
 export const loginUser = async (user) => {
   const response = await instance.post("/api/users/login/", user);

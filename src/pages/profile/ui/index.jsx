@@ -12,6 +12,7 @@ import {
   unfollowUser,
 } from "../../../entities/user/api";
 import { ModalData } from "../../../features/modalData/ui";
+import { ModalPhoto } from "../../../features/modalPhoto/ui";
 import { ModalPassword } from "../../../features/modalPassword/ui";
 import { useParams } from "react-router-dom";
 
@@ -29,6 +30,7 @@ const Profile = ({ id }) => {
     main: false,
     data: false,
     pass: false,
+    photo: false,
   });
 
   const [user, setUser] = useState(null);
@@ -99,6 +101,7 @@ const Profile = ({ id }) => {
             <ModalChange active={modals} setActive={setModals} />
             <ModalPassword active={modals} setActive={setModals} />
             <ModalData active={modals} setActive={setModals} />
+            <ModalPhoto active={modals} setActive={setModals} />
           </div>
         </div>
       </div>

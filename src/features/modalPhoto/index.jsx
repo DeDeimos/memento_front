@@ -1,0 +1,1 @@
+import { ModalPhoto } from "./ui";

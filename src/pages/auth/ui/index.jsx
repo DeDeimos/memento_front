@@ -35,7 +35,7 @@ const Auth = () => {
       console.log("res")
       console.log(res);
 
-      if(res === 'error') {
+      if(res == 'error') {
         setError('Неправильные учетные данные');
         return;
       }
